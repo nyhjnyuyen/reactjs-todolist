@@ -6,7 +6,7 @@ function App() {
   const [todos, setTodos] = useState([])
   const [todoValue, setTodoValue] = useState('')
 
-  function persistData() {
+  function persistData(newList) {
     localStorage.setItem('todos', JSON.stringify({ todos:
       newList
     }) )
@@ -35,11 +35,11 @@ function App() {
     if(!localStorage) {
       return
     }
-    let localTodos = localStorage.getITem('todo')
+    let localTodos = localStorage.getItem('todos')
     if (!localTodos){
       return
     }
-    console.lod(localTodos)
+    console.log(localTodos)
       localTodos = JSON.parse(localTodos).todos
       setTodos(localTodos)
       
